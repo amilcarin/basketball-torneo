@@ -146,24 +146,35 @@ const CSS = `
 .logo-remove-btn:hover{color:var(--red);}
 
 /* poster */
-.poster{background:linear-gradient(180deg,#0a0f20 0%,#0d1835 50%,#070d1a 100%);border:2px solid var(--gold);border-radius:16px;overflow:hidden;font-family:'Oswald',sans-serif;}
-.poster-hdr{background:linear-gradient(135deg,#1c0900,#2a1000);border-bottom:3px solid var(--gold);padding:18px 16px;text-align:center;}
-.poster-title{font-size:26px;font-weight:700;color:var(--gold);letter-spacing:3px;text-transform:uppercase;text-shadow:0 0 25px rgba(255,214,0,.5);}
-.poster-sub{font-size:11px;color:var(--orange);letter-spacing:4px;text-transform:uppercase;margin-top:5px;}
-.poster-info{background:rgba(255,102,0,.08);border-bottom:1px solid rgba(255,102,0,.25);padding:10px 14px;display:flex;flex-direction:column;gap:6px;}
-.poster-info-row{display:flex;align-items:center;gap:7px;font-size:12px;}
-.poster-info-lbl{color:var(--muted);}
-.poster-info-val{color:var(--text);font-weight:600;}
-.poster-game{padding:14px 16px;border-bottom:1px solid rgba(34,44,68,.6);}
-.poster-game:last-child{border-bottom:none;}
-.poster-game-hd{font-size:10px;color:var(--orange);letter-spacing:2px;margin-bottom:9px;display:flex;align-items:center;gap:7px;}
-.poster-matchup{display:flex;align-items:center;justify-content:space-between;gap:8px;}
-.poster-team{flex:1;text-align:center;display:flex;flex-direction:column;align-items:center;}
-.poster-tnm{font-size:15px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#fff;line-height:1.1;}
-.poster-vs{flex-shrink:0;background:rgba(255,102,0,.18);border:1px solid var(--orange);border-radius:8px;padding:6px 11px;font-size:13px;font-weight:700;color:var(--orange);letter-spacing:2px;}
-.poster-score-row{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:4px;}
-.poster-score{font-size:22px;font-weight:700;color:var(--green);}
-.poster-ft{background:rgba(0,0,0,.4);padding:10px;text-align:center;font-size:10px;color:var(--muted);letter-spacing:2px;text-transform:uppercase;}
+.poster-wrap{position:relative;}
+.btn-print{background:var(--gold);color:#000;font-family:'Oswald',sans-serif;font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:11px 0;border-radius:10px;cursor:pointer;border:none;width:100%;margin-bottom:12px;transition:.2s;}
+.btn-print:hover{filter:brightness(1.1);}
+.poster{background:#0e1f4a;border:3px solid #1a3a7a;border-radius:16px;overflow:hidden;font-family:'Oswald',sans-serif;}
+.poster-hdr{background:linear-gradient(160deg,#0a1a45 0%,#102060 100%);padding:18px 16px 14px;text-align:center;position:relative;}
+.poster-city{display:inline-block;background:#c00;color:#fff;font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;padding:4px 18px;border-radius:4px;margin-bottom:8px;}
+.poster-title{font-size:38px;font-weight:700;color:#fff;line-height:1;font-style:italic;text-shadow:2px 2px 0 rgba(0,0,0,.4);}
+.poster-dates{display:flex;justify-content:space-between;padding:8px 16px;font-size:13px;font-weight:700;letter-spacing:2px;color:#b0c4f8;text-transform:uppercase;border-top:1px solid rgba(255,255,255,.1);margin-top:10px;}
+.poster-game{display:flex;align-items:center;margin:0 10px 10px;border-radius:10px;overflow:hidden;}
+.poster-team-blk{flex:1;background:#c00;display:flex;align-items:center;gap:8px;padding:10px 12px;min-width:0;}
+.poster-team-blk.right{background:#8a0000;flex-direction:row-reverse;text-align:right;}
+.poster-logo-box{width:54px;height:54px;border-radius:8px;overflow:hidden;background:rgba(0,0,0,.3);flex-shrink:0;display:flex;align-items:center;justify-content:center;}
+.poster-logo-box img{width:100%;height:100%;object-fit:cover;}
+.poster-logo-init{font-size:18px;font-weight:700;color:#fff;}
+.poster-tnm{font-size:13px;font-weight:700;text-transform:uppercase;color:#fff;line-height:1.2;flex:1;min-width:0;overflow:hidden;}
+.poster-vs-blk{background:#c00;padding:0 4px;display:flex;flex-direction:column;align-items:center;justify-content:center;flex-shrink:0;}
+.poster-vs-txt{font-size:14px;font-weight:700;color:#fff;letter-spacing:1px;}
+.poster-score-blk{background:#fff;width:70px;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:700;color:#111;font-family:'Oswald',sans-serif;flex-shrink:0;min-height:74px;}
+.poster-score-blk.done{background:#e8ffe8;}
+.poster-time-row{padding:4px 10px 10px;display:flex;gap:10px;align-items:center;}
+.poster-time-badge{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:20px;padding:3px 10px;font-size:10px;color:#b0c4f8;letter-spacing:1px;}
+.poster-ft{background:#0a1a3a;padding:14px;text-align:center;font-size:18px;font-weight:700;color:#fff;font-style:italic;letter-spacing:1px;border-top:2px solid rgba(255,255,255,.1);}
+@media print{
+  .bk{background:#fff!important;}
+  .hdr,.tabs,.filters,.suns,.btn-print,.notice,.warn{display:none!important;}
+  .body{padding:0!important;}
+  .poster{border-radius:0!important;border:none!important;}
+  .poster-score-blk{border:2px solid #ccc;}
+}
 .empty{text-align:center;padding:30px 12px;color:var(--muted);}
 .empty-i{font-size:38px;margin-bottom:8px;}
 .empty-t{font-size:13px;}
@@ -396,15 +407,64 @@ export default function App() {
           <div className="suns">{sundays.map((s,i)=>{const cnt=gamesOn(i).length;if(cnt===0)return null;return<div key={i} className={`sun ${posterSun===i?"on":""}`} onClick={()=>setPosterSun(i)}><div className="d">{s.getDate()}</div><div className="m">{MONTHS_S[s.getMonth()]}</div><div className="gc">{cnt} partidos</div></div>;})}</div>
           {gamesOn(posterSun).length===0
             ? <div className="empty"><div className="empty-t">Agrega partidos al Calendario para generar el poster</div></div>
-            : <div className="poster"><div className="poster-hdr"><div className="poster-title">{tourney}</div><div className="poster-sub">Programa de Partidos - Domingo</div></div>
-              <div className="poster-info"><div className="poster-info-row"><span className="poster-info-lbl">Fecha:</span><span className="poster-info-val">{formatDateES(sundays[posterSun])}</span></div><div className="poster-info-row"><span className="poster-info-lbl">Lugar:</span><span className="poster-info-val">{venue}</span></div></div>
-              {gamesOn(posterSun).map((g,i)=>{const t1=getTeam(g.team1),t2=getTeam(g.team2);if(!t1||!t2)return null;return<div key={g.id} className="poster-game" style={{background:i%2===0?"rgba(255,102,0,.03)":"transparent"}}><div className="poster-game-hd"><span>{g.time}</span><span style={{color:"var(--text)",fontWeight:600}}>{g.round}</span><span className={`cat ${g.category==="Masculino"?"cat-m":"cat-f"}`}>{g.category}</span></div>
-              <div className="poster-matchup">
-                <div className="poster-team"><TeamLogo teamId={t1.id} size="md"/><div className="poster-tnm">{t1.name}</div></div>
-                {g.completed?<div className="poster-score-row"><span className="poster-score" style={{color:g.score1>g.score2?"var(--green)":"var(--muted)"}}>{g.score1}</span><span style={{color:"var(--muted)"}}>-</span><span className="poster-score" style={{color:g.score2>g.score1?"var(--green)":"var(--muted)"}}>{g.score2}</span></div>:<div className="poster-vs">VS</div>}
-                <div className="poster-team"><TeamLogo teamId={t2.id} size="md"/><div className="poster-tnm">{t2.name}</div></div>
-              </div></div>;})}
-              <div className="poster-ft">Los esperamos a todos! - Entrada Libre - {venue}</div></div>}
+            : <div className="poster-wrap">
+                <button className="btn-print" onClick={()=>window.print()}>IMPRIMIR POSTER</button>
+                <div className="poster" id="poster-print">
+                  {/* Header */}
+                  <div className="poster-hdr">
+                    <div className="poster-city">{venue.split(" ").slice(-2).join(" ") || venue}</div>
+                    <div className="poster-title">{tourney}</div>
+                    <div className="poster-dates">
+                      <span>{MONTHS_L[sundays[posterSun].getMonth()].toUpperCase()} {sundays[posterSun].getFullYear()}</span>
+                      <span>DOMINGO</span>
+                    </div>
+                  </div>
+
+                  {/* Games */}
+                  <div style={{padding:"10px 0 0"}}>
+                    {gamesOn(posterSun).map((g)=>{
+                      const t1=getTeam(g.team1), t2=getTeam(g.team2);
+                      if(!t1||!t2) return null;
+                      const logo1=getLogo(t1.id), logo2=getLogo(t2.id);
+                      return <div key={g.id}>
+                        <div className="poster-time-row">
+                          <span className="poster-time-badge">{g.time}</span>
+                          <span className="poster-time-badge">{g.round}</span>
+                          <span className="poster-time-badge">{g.category}</span>
+                        </div>
+                        <div className="poster-game">
+                          {/* Team 1 */}
+                          <div className="poster-team-blk">
+                            <div className="poster-logo-box">
+                              {logo1 ? <img src={logo1} alt={t1.name}/> : <span className="poster-logo-init">{t1.name[0]}</span>}
+                            </div>
+                            <div className="poster-tnm">{t1.name}</div>
+                          </div>
+                          {/* VS */}
+                          <div className="poster-vs-blk">
+                            <span className="poster-vs-txt">VS</span>
+                          </div>
+                          {/* Team 2 */}
+                          <div className="poster-team-blk right">
+                            <div className="poster-logo-box">
+                              {logo2 ? <img src={logo2} alt={t2.name}/> : <span className="poster-logo-init">{t2.name[0]}</span>}
+                            </div>
+                            <div className="poster-tnm">{t2.name}</div>
+                          </div>
+                          {/* Score */}
+                          <div className={`poster-score-blk ${g.completed?"done":""}`}>
+                            {g.completed ? `${g.score1}-${g.score2}` : ""}
+                          </div>
+                        </div>
+                      </div>;
+                    })}
+                  </div>
+
+                  {/* Footer */}
+                  <div className="poster-ft">{venue}</div>
+                </div>
+              </div>
+          }
         </>}
 
         {/* EQUIPOS */}
