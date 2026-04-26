@@ -150,30 +150,43 @@ const CSS = `
 .btn-print{background:var(--gold);color:#000;font-family:'Oswald',sans-serif;font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:11px 0;border-radius:10px;cursor:pointer;border:none;width:100%;margin-bottom:12px;transition:.2s;}
 .btn-print:hover{filter:brightness(1.1);}
 .poster{background:#0e1f4a;border:3px solid #1a3a7a;border-radius:16px;overflow:hidden;font-family:'Oswald',sans-serif;}
-.poster-hdr{background:linear-gradient(160deg,#0a1a45 0%,#102060 100%);padding:18px 16px 14px;text-align:center;position:relative;}
+.poster-hdr{background:linear-gradient(160deg,#0a1a45 0%,#102060 100%);padding:12px 16px 10px;text-align:center;position:relative;}
 .poster-city{display:inline-block;background:#c00;color:#fff;font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;padding:4px 18px;border-radius:4px;margin-bottom:8px;}
-.poster-title{font-size:38px;font-weight:700;color:#fff;line-height:1;font-style:italic;text-shadow:2px 2px 0 rgba(0,0,0,.4);}
+.poster-title{font-size:32px;font-weight:700;color:#fff;line-height:1;font-style:italic;text-shadow:2px 2px 0 rgba(0,0,0,.4);}
 .poster-dates{display:flex;justify-content:space-between;padding:8px 16px;font-size:13px;font-weight:700;letter-spacing:2px;color:#b0c4f8;text-transform:uppercase;border-top:1px solid rgba(255,255,255,.1);margin-top:10px;}
-.poster-game{display:flex;align-items:center;margin:0 10px 10px;border-radius:10px;overflow:hidden;}
-.poster-team-blk{flex:1;background:#c00;display:flex;align-items:center;gap:8px;padding:10px 12px;min-width:0;}
+.poster-game{display:flex;align-items:center;margin:0 10px 8px;border-radius:8px;overflow:hidden;}
+.poster-team-blk{flex:1;background:#c00;display:flex;align-items:center;gap:7px;padding:7px 10px;min-width:0;}
 .poster-team-blk.right{background:#8a0000;flex-direction:row-reverse;text-align:right;}
-.poster-logo-box{width:54px;height:54px;border-radius:8px;overflow:hidden;background:rgba(0,0,0,.3);flex-shrink:0;display:flex;align-items:center;justify-content:center;}
+.poster-logo-box{width:46px;height:46px;border-radius:6px;overflow:hidden;background:rgba(0,0,0,.3);flex-shrink:0;display:flex;align-items:center;justify-content:center;}
 .poster-logo-box img{width:100%;height:100%;object-fit:cover;}
 .poster-logo-init{font-size:18px;font-weight:700;color:#fff;}
 .poster-tnm{font-size:13px;font-weight:700;text-transform:uppercase;color:#fff;line-height:1.2;flex:1;min-width:0;overflow:hidden;}
 .poster-vs-blk{background:#c00;padding:0 4px;display:flex;flex-direction:column;align-items:center;justify-content:center;flex-shrink:0;}
 .poster-vs-txt{font-size:14px;font-weight:700;color:#fff;letter-spacing:1px;}
-.poster-score-blk{background:#fff;width:70px;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:700;color:#111;font-family:'Oswald',sans-serif;flex-shrink:0;min-height:74px;}
+.poster-score-blk{background:#fff;width:62px;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:700;color:#111;font-family:'Oswald',sans-serif;flex-shrink:0;min-height:60px;}
 .poster-score-blk.done{background:#e8ffe8;}
-.poster-time-row{padding:4px 10px 10px;display:flex;gap:10px;align-items:center;}
+.poster-time-row{padding:6px 10px 4px;display:flex;gap:8px;align-items:center;}
 .poster-time-badge{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:20px;padding:3px 10px;font-size:10px;color:#b0c4f8;letter-spacing:1px;}
-.poster-ft{background:#0a1a3a;padding:14px;text-align:center;font-size:18px;font-weight:700;color:#fff;font-style:italic;letter-spacing:1px;border-top:2px solid rgba(255,255,255,.1);}
+.poster-ft{background:#0a1a3a;padding:10px;text-align:center;font-size:16px;font-weight:700;color:#fff;font-style:italic;letter-spacing:1px;border-top:2px solid rgba(255,255,255,.1);}
 @media print{
+  @page{margin:6mm;size:letter portrait;}
+  *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important;color-adjust:exact!important;}
   .bk{background:#fff!important;}
   .hdr,.tabs,.filters,.suns,.btn-print,.notice,.warn{display:none!important;}
   .body{padding:0!important;}
-  .poster{border-radius:0!important;border:none!important;}
-  .poster-score-blk{border:2px solid #ccc;}
+  .poster-wrap{display:block!important;}
+  .poster{border-radius:6px!important;border:2px solid #1a3a7a!important;width:100%!important;page-break-inside:avoid;}
+  .poster-hdr{background:#102060!important;}
+  .poster-city{background:#c00!important;color:#fff!important;}
+  .poster-team-blk{background:#c00!important;}
+  .poster-team-blk.right{background:#8a0000!important;}
+  .poster-vs-blk{background:#c00!important;}
+  .poster-score-blk{border:2px solid #ccc!important;background:#fff!important;}
+  .poster-score-blk.done{background:#e8ffe8!important;}
+  .poster-ft{background:#0a1a3a!important;color:#fff!important;}
+  .poster-time-badge{background:rgba(0,0,0,.08)!important;border:1px solid #ccc!important;color:#333!important;}
+  .poster-logo-box{background:rgba(0,0,0,.15)!important;}
+  .poster-dates{color:#6080c0!important;}
 }
 .empty{text-align:center;padding:30px 12px;color:var(--muted);}
 .empty-i{font-size:38px;margin-bottom:8px;}
